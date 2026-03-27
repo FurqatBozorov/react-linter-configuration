@@ -7,9 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "format:check": "prettier --check . --config ./.prettierrc",
+    "format:fix": "prettier --write . --config ./.prettierrc",
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
@@ -26,8 +31,18 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^17.4.0",
     "jiti": "^2.6.1",
+    "prettier": "3.8.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.57.2",
-    "vite": "^8.0.1"
+    "vite": "^8.0.1",
+    "husky": "^8.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,md,json,scss}": [
+      "npm format:check"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "npm lint"
+    ]
   }
 }

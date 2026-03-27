@@ -6,8 +6,10 @@ import logo from "./assets/vite.svg";
 
 function App() {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     console.log(count);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
