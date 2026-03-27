@@ -39,10 +39,10 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,css,md,json,scss}": [
-      "npm format:check"
+      "npm run format:check"
     ],
     "src/**/*.{js,jsx,ts,tsx,json}": [
-      "npm lint"
+      "npm run lint"
     ]
   }
 }
